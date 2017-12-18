@@ -5,23 +5,15 @@ import React, { Component } from "react";
 
 class Tile extends Component {
 	state = {
-		clicked: false,
+		clicked: "no",
 		score: 0
-	};
-
-	handleInputChange = event => {
-		const { name } = event.target;
-		this.setState({
-			[name]: true
-		});
-		console.log(this.state.clicked);
 	};
 
 	handleFormSubmit = event => {
 		event.preventDefault();
-		if(this.state.clicked === event.target) {
+		if(this.state.clicked) {
 			this.setState({
-				clicked : true
+				clicked : "yes"
 			});
 		};
 		console.log(this.state.clicked);
@@ -36,7 +28,7 @@ class Tile extends Component {
 						<div className="card" style={{ width: '20rem;' }}>
 							<img className="card-img-top" src="../public/assets/pictures/goku.jpg" alt="Goku" />
 							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onChange={this.handleInputChange} onClick={this.handleFormSubmit}>Goku</button>
+							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Goku</button>
 							</div>
 						</div>
 					</div>

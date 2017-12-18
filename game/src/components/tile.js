@@ -26,7 +26,7 @@ class Tile extends Component {
 				<div className="row">
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../public/assets/pictures/goku.jpg" alt="Goku" />
+							<img className="card-img-top" src={require('./pictures/goku.jpg')} alt="Goku" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Goku</button>
 							</div>
@@ -34,7 +34,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/goku.jpg" alt="Gohan" />
+							<img className="card-img-top" src={require('./pictures/gohan.jpg')} alt="Gohan" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Gohan</button>
 							</div>
@@ -42,7 +42,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/vegeta.jpg" alt="Vegeta" />
+							<img className="card-img-top" src={require('./pictures/vegeta.jpg')} alt="Vegeta" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Vegeta</button>
 							</div>
@@ -52,7 +52,7 @@ class Tile extends Component {
 				<div className="row">
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/piccolo.jpg" alt="Piccolo" />
+							<img className="card-img-top" src={require('./pictures/piccolo.jpg')} alt="Piccolo" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Piccolo</button>
 							</div>
@@ -60,7 +60,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/roshi.jpg" alt="Master Roshi" />
+							<img className="card-img-top" src={require('./pictures/roshi.jpg')} alt="Master Roshi" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Master Roshi</button>
 							</div>
@@ -68,7 +68,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/beerus.jpg" alt="Lord Beerus" />
+							<img className="card-img-top" src={require('./pictures/beerus.png')} alt="Lord Beerus" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Lord Beerus</button>
 							</div>
@@ -78,7 +78,7 @@ class Tile extends Component {
 				<div className="row">
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/17.jpg" alt="#17" />
+							<img className="card-img-top" src={require('./pictures/17.png')} alt="#17" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Android 17</button>
 							</div>
@@ -86,7 +86,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../../public/assets/pictures/18.jpg" alt="#18" />
+							<img className="card-img-top" src={require('./pictures/18.jpg')} alt="#18" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Android 18</button>
 							</div>
@@ -94,7 +94,7 @@ class Tile extends Component {
 					</div>
 					<div className="col-sm-4">
 						<div className="card" style={{ width: '20rem;' }}>
-							<img className="card-img-top" src="../public/assets/pictures/krillin.png" alt="Krillin" />
+							<img className="card-img-top" src={require('./pictures/krillin.png')} alt="Krillin" />
 							<div className="card-body">
 							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Krillin</button>
 							</div>

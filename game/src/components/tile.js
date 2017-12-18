@@ -14,7 +14,7 @@ class Tile extends Component {
 		if(this.state.clicked) {
 			this.setState({
 				clicked : "yes",
-				score : +1
+				score : this.state.score +1
 			});
 		};
 		console.log(this.state.clicked);

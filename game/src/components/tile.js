@@ -1,106 +1,62 @@
 import React, { Component } from "react";
+import Card from "./card";
 
 // The pictures that the user will click on will go here.
 // I will need 12 pictures (tiles) total - 4 rows of 4
 
 class Tile extends Component {
 	state = {
-		clicked: "no",
-		score: 0
+		score: 0,
+		cards: [ 
+				 {	src: 'goku.jpg',
+				 	name: 'Goku'
+				 },
+				 {
+				 	src: 'gohan.jpg',
+				 	name: 'Gohan'
+				 },
+				 {
+				 	src: 'vegeta.jpg',
+				 	name:'Vegeta'
+				 },
+				 {
+				 	src: 'piccolo.jpg',
+				 	name: 'Piccolo'
+				 },
+				 {
+				 	src: 'roshi.jpg',
+				 	name: 'Master Roshi'
+				 },
+				 {
+				 	src: 'beerus.png',
+				 	name: "Lord Beerus"
+				 },
+				 {
+				 	src: '17.png',
+				 	name: 'Android 17'
+				 },
+				 {
+				 	src: '18.jpg',
+				 	name: 'Android 18'
+				 },
+				 {
+				 	src: 'krillin.png',
+				 	name: 'Krillin'
+				 }
+				]
 	};
 
-	handleFormSubmit = event => {
-		event.preventDefault();
-		if(this.state.clicked) {
-			this.setState({
-				clicked : "yes",
-				score : this.state.score +1
-			});
-		};
-		console.log(this.state.clicked);
-	};
+	
 
 	render () {
+		const cards = this.state.cards.map((card, index) => {
+			return <Card src={card.src} name={card.name} key={index} increaseScore={() => this.setState({score: this.state.score +1})} />
+		})
 		return (
 			<div>
 				<h1>Score: {this.state.score}</h1>
-				<div className="row">
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/goku.jpg')} style={{ width: '20rem', height: '20rem'}} alt="Goku" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Goku</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/gohan.jpg')} style={{ width: '20rem', height: '20rem'}} alt="Gohan" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Gohan</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/vegeta.jpg')} style={{ width: '20rem', height: '20rem'}} alt="Vegeta" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Vegeta</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/piccolo.jpg')} style={{ width: '20rem', height: '20rem'}} alt="Piccolo" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Piccolo</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/roshi.jpg')} style={{ width: '20rem', height: '20rem'}} alt="Master Roshi" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Master Roshi</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/beerus.png')} style={{ width: '20rem', height: '20rem'}} alt="Lord Beerus" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Lord Beerus</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/17.png')} style={{ width: '20rem', height: '20rem'}} alt="#17" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Android 17</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/18.jpg')} style={{ width: '20rem', height: '20rem'}} alt="#18" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Android 18</button>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-4">
-						<div className="card" style={{ width: '20rem' }}>
-							<img className="card-img-top" src={require('./pictures/krillin.png')} style={{ width: '20rem', height: '20rem'}} alt="Krillin" />
-							<div className="card-body">
-							<button className="btn btn-primary" type="submit" value={this.state.clicked} onClick={this.handleFormSubmit}>Krillin</button>
-							</div>
-						</div>
-					</div>
+				<div className='row'>
+					{cards}
 				</div>
 			</div>
 		);
